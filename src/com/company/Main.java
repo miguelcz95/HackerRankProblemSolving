@@ -1,21 +1,70 @@
 package com.company;
 
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Ejercicio1();
+        //Ejercicio1();
+        //Ejercicio2();
+        //Ejercicio3();
+        Ejercicio4();
+        //Ejercicio2();
+        //Ejercicio1();
     }
 
-    static void Ejercicio1() {
-        List<Integer> grades = Stream.of(22, 86, 30, 0, 16, 51, 53, 42, 48, 22, 69, 12, 27, 34, 24, 95, 16, 32, 22, 52, 56, 71, 95).collect(Collectors.toList());
-        //List<Integer> grades = Stream.of(73,67,38,33).collect(Collectors.toList());
+    private static void Ejercicio4() {
+        int[] a = {1, 2, 3};
+        int[] b = {3, 2, 1};
+
+        List<Integer> result = new ArrayList<>();
+        Integer contA = 0, contB = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            contA = a[i] < b[i] ? contA + 1 : contA;
+        }
+        for (int i = 0; i < a.length; i++) {
+            contB = a[i] > b[i] ? contB + 1 : contB;
+        }
+
+        result.add(contB);
+        result.add(contA);
+        System.out.println(result.toString());
+    }
+
+    private static void Ejercicio2() {
+        int n = 6;
+        int[] ar = {1, 2, 3, 4, 10, 11};
+        System.out.println(Arrays.stream(ar).sum());
+
+    }
+
+    private static void Ejercicio1() {
+        int a = 2, b = 5;
+        System.out.println(a + b);
+    }
+
+    private static void Ejercicio3() {
+
+    }
+
+/*    private static void Ejercicio2() {
+        int n = 50;
+        for (int i = 1; i <= n; i++) {
+            for (int j = n-i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }*/
+
+/*    static void Ejercicio1() {
+        //List<Integer> grades = Stream.of(22, 86, 30, 0, 16, 51, 53, 42, 48, 22, 69, 12, 27, 34, 24, 95, 16, 32, 22, 52, 56, 71, 95).collect(Collectors.toList());
+        List<Integer> grades = Stream.of(73,67,38,33).collect(Collectors.toList());
         AtomicInteger i = new AtomicInteger(0);
         AtomicInteger aux = new AtomicInteger(0);
 
@@ -23,7 +72,7 @@ public class Main {
             return ((grade < 38) || (grade % 5 < 3)) ? grade : (grade + (5 - (grade % 5)));
         }).collect(Collectors.toList());
 
-/*        List<Integer> gradesFinal = grades.stream().map(grade -> {
+       List<Integer> gradesFinal = grades.stream().map(grade -> {
             aux.set(0);
             i.set(0);
             if (grade < 40) return grade;
@@ -40,7 +89,7 @@ public class Main {
                 }
             }
             return grade;
-        }).collect(Collectors.toList());*/
-       gradesFinal.forEach(System.out::println);
-    }
+        }).collect(Collectors.toList());*//*
+       gradesFinal.forEach(grade -> Logger.getLogger(grade.toString()));
+    }*/
 }
