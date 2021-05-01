@@ -1,15 +1,33 @@
 package com.company;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        try {
+            Scanner leer = new Scanner(System.in);
+            String nombres = leer.nextLine();
+            int edad = leer.nextInt();
+            leer.nextLine();
+            String apellidos = leer.nextLine();
+
+            System.out.println(nombres);
+            System.out.println(edad);
+            System.out.println(apellidos);
+        } catch (Exception e) {
+            System.out.println("Holiwis");
+        }
+
         //Ejercicio1();
         //Ejercicio2();
         //Ejercicio3();
-        Ejercicio4();
+        //Ejercicio4();
         //Ejercicio2();
         //Ejercicio1();
     }
@@ -19,7 +37,7 @@ public class Main {
         int[] b = {3, 2, 1};
 
         List<Integer> result = new ArrayList<>();
-        Integer contA = 0, contB = 0;
+        int contA = 0, contB = 0;
 
         for (int i = 0; i < a.length; i++) {
             contA = a[i] < b[i] ? contA + 1 : contA;
